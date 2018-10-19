@@ -1,0 +1,39 @@
+<h1 style="color: darkcyan">
+  PESSOA
+</h1>
+<label>Nome: 
+  <input [(ngModel)]="pessoa.nome">
+<label>Sobrenome: 
+  <input [(ngModel)]="pessoa.sobrenome">
+  <label>Sexo:
+    <select [(ngModel)]="pessoa.sexo" >
+      <option *ngFor="let s of sexos">{{s}} </option>
+    </select>
+  </label>
+<button (click)="salvar()" >Salvar</button>
+
+</label>
+<div style="overflow-x:auto;">
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Sexo</th>
+      <th>Apções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of pessoas">
+      <td>{{item.id}}</td>
+      <td>{{item.nome}}</td>
+      <td>{{item.sobrenome}}</td>
+      <td>{{item.sexo}}</td>
+      <td><button (click)="excluir(item)">Excluir</button>
+          <button (click)="alterar(item)">Alterar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
